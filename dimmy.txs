@@ -1,0 +1,7 @@
+  dotnet add package Microsoft.Kiota.Abstractions --version 1.8.4
+   dotnet add package Microsoft.Kiota.Authentication.Azure --version 1.1.5
+   dotnet add package Microsoft.Kiota.Http.HttpClientLibrary --version 1.4.0
+   dotnet add package Microsoft.Kiota.Serialization.Form --version 1.1.6
+   dotnet add package Microsoft.Kiota.Serialization.Json --version 1.2.3
+   dotnet add package Microsoft.Kiota.Serialization.Multipart --version 1.1.4
+   dotnet add package Microsoft.Kiota.Serialization.Text --version 1.1.5
