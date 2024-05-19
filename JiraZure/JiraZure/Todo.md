@@ -1,71 +1,68 @@
-   1.Milestone
+## 1. Milestone
    
-	[] ConfigLoader
-		[] Standalone::LoadIssuerHandling
-		[] Standalone::LoadProjectHandling
+- [ ] ConfigLoader
+    - [ ] Standalone::LoadIssuerHandling
+    - [ ] Standalone::LoadProjectHandling
 
-	[] AzureHook
-		[] Creade Isse 	
-	[] Azure 
-		[] Connect
-		[] Disconnect
-			[] CreateJira Workflow 
-			[] UpdateJiraIdInAzure
+- [ ] AzureHook
+    - [ ] Create Issue 	
+- [ ] Azure 
+    - [ ] Connect
+    - [ ] Disconnect
+        - [ ] CreateJira Workflow 
+        - [ ] UpdateJiraIdInAzure
 
-	[] Jira
-		[] Connect
-		[] Disconnect
-		[] createJira Ticket
-		[] getJira Ticket
+- [ ] Jira
+    - [ ] Connect
+    - [ ] Disconnect
+    - [ ] createJira Ticket
+    - [ ] getJira Ticket
 
+## 2. Milestone
 
+- [ ] Modells
+    - [ ] CreateFromJSON Or FROM MODEL Or AutoMapper
+    - [ ] Converter
+- [ ] JiraHook
+- [ ] Jira
+    - [ ] CreateAzure Workflow
+    - [ ] UpdateAzureIdinJira
+    
+- [ ] Grafana 
+    - [ ] Basic Tracing
+    - [ ] Basic logging
+- [ ] Docker Composer File
 
-2.Milestone
+## 3. Milestone
 
+- [ ] All Basics Azure -> Jira
+- [ ] All Basics Jira -> Azure
 
+## 4. Milestone
 
-	[] Modells
-		[] CreateFromJSON Or FROM MODEL Or AutoMapper
-		[] Converter
-	[] JiraHook
-	[] Jira
-		[] CreateAzure Workflow
-		[]  UpdatAzureIdinJira
+- [ ] ConfigLoader
+    - [ ] API::LoadIssuerHandling
+    - [ ] API::LoadProjectHandling
+- [ ] UI Angular
+    - [ ] JSON Viewer
+    - [ ] JSON Mapper Basic
+
+## 5. Milestone
+
+- [ ]  UI
+    - [ ] RuleCreater
+- [ ]  Modells
+    - [ ] RuleMapper
+- [ ] Some TODO you didnt wont to
+
+## 6. MileStone
 	
-	[] Grafana 
-		[] Basic Tracing
-		[] Basic logging
-	[] Docker Composer File
+- [ ] UI
+    - [ ] Projects Handling
+- [ ] C# 
+    - [ ] Custom Rules...		
 
-3.Milstone
+## 7. MileStone
 
-	[] All Basics Azure -> Jira
-	[] All Basics Jira -> Azure
-
-4.Milestone
-
-	[] ConfigLoader
-		[] API::LoadIssuerHandling
-		[] API::LoadProjectHandling
-	[] UI Angular
-		JSON Viewer
-		JSON Mapper Basic
-
-5.Milestone
-
-	[] UI
-		RuleCreater
-	[] Modells
-		RuleMapper
-	[] Some TODO you didnt wont to
-
-6.MileStone
-	
-	[] UI
-		[] Projects Handling
-	[] C# 
-		Custom Rules...
-7.MileStone
-
-   [] HELM & Kubernetes
-   [] Master Slave Handling
+- [ ] HELM & Kubernetes
+- [ ] Master Slave Handling
