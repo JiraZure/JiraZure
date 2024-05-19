@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Project.Item.Avatars {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<ProjectAvatars>(requestInfo, ProjectAvatars.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<ProjectAvatars>(requestInfo, ProjectAvatars.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns all project avatars, grouped by system and custom avatars.This operation can be accessed anonymously.**[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.

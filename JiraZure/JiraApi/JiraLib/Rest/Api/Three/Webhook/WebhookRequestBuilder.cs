@@ -66,7 +66,7 @@ namespace JiraLib.Rest.Api.Three.Webhook {
                 {"400", ErrorCollection.CreateFromDiscriminatorValue},
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of the webhooks registered by the calling app.**[Permissions](#permissions) required:** Only [Connect](https://developer.atlassian.com/cloud/jira/platform/#connect-apps) and [OAuth 2.0](https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps) apps can use this operation.
@@ -91,7 +91,7 @@ namespace JiraLib.Rest.Api.Three.Webhook {
                 {"400", ErrorCollection.CreateFromDiscriminatorValue},
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PageBeanWebhook>(requestInfo, PageBeanWebhook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanWebhook>(requestInfo, PageBeanWebhook.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Registers webhooks.**NOTE:** for non-public OAuth apps, webhooks are delivered only if there is a match between the app owner and the user who registered a dynamic webhook.**[Permissions](#permissions) required:** Only [Connect](https://developer.atlassian.com/cloud/jira/platform/#connect-apps) and [OAuth 2.0](https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps) apps can use this operation.
@@ -118,7 +118,7 @@ namespace JiraLib.Rest.Api.Three.Webhook {
                 {"400", ErrorCollection.CreateFromDiscriminatorValue},
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ContainerForRegisteredWebhooks>(requestInfo, ContainerForRegisteredWebhooks.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<ContainerForRegisteredWebhooks>(requestInfo, ContainerForRegisteredWebhooks.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Removes webhooks by ID. Only webhooks registered by the calling app are removed. If webhooks created by other apps are specified, they are ignored.**[Permissions](#permissions) required:** Only [Connect](https://developer.atlassian.com/cloud/jira/platform/#connect-apps) and [OAuth 2.0](https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps) apps can use this operation.

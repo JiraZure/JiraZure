@@ -44,7 +44,7 @@ namespace JiraLib.Rest.Api.Three.Project.Item.Delete {
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a project asynchronously.This operation is: *  transactional, that is, if part of the delete fails the project is not deleted. *  [asynchronous](#async). Follow the `location` link in the response to determine the status of the task and use [Get task](#api-rest-api-3-task-taskId-get) to obtain subsequent updates.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

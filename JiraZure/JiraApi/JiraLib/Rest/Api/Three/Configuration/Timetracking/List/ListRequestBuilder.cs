@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Configuration.Timetracking.List {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<TimeTrackingProvider>(requestInfo, TimeTrackingProvider.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<TimeTrackingProvider>(requestInfo, TimeTrackingProvider.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>

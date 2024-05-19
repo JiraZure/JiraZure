@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Project.Search {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageBeanProject>(requestInfo, PageBeanProject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanProject>(requestInfo, PageBeanProject.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of projects visible to the user.This operation can be accessed anonymously.**[Permissions](#permissions) required:** Projects are returned only where the user has one of: *  *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project. *  *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project. *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

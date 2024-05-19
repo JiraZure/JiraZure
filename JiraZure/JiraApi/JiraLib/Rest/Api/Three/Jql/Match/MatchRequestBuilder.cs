@@ -48,7 +48,7 @@ namespace JiraLib.Rest.Api.Three.Jql.Match {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<IssueMatches>(requestInfo, IssueMatches.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<IssueMatches>(requestInfo, IssueMatches.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Checks whether one or more issues would be returned by one or more JQL queries.**[Permissions](#permissions) required:** None, however, issues are only matched against JQL queries where the user has: *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in. *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.

@@ -61,7 +61,7 @@ namespace JiraLib.Rest.Api.Three.VersionNamespace {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<VersionObject>(requestInfo, VersionObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<VersionObject>(requestInfo, VersionObject.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a project version.This operation can be accessed anonymously.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project the version is added to.

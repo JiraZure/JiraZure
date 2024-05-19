@@ -65,7 +65,7 @@ namespace JiraLib.Rest.Api.Three.Issuetype {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<IssueTypeDetails>(requestInfo, IssueTypeDetails.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<IssueTypeDetails>(requestInfo, IssueTypeDetails.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -86,7 +86,7 @@ namespace JiraLib.Rest.Api.Three.Issuetype {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<IssueTypeDetails>(requestInfo, IssueTypeDetails.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<IssueTypeDetails>(requestInfo, IssueTypeDetails.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns all issue types.This operation can be accessed anonymously.**[Permissions](#permissions) required:** Issue types are only returned as follows: *  if the user has the *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), all issue types are returned. *  if the user has the *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for one or more projects, the issue types associated with the projects the user has permission to browse are returned.

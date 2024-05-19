@@ -45,7 +45,7 @@ namespace JiraLib.Rest.Api.Three.Screens.AddToDefault.Item {
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Adds a field to the default tab of the default screen.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

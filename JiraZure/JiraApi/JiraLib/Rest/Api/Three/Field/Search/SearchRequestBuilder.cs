@@ -59,7 +59,7 @@ namespace JiraLib.Rest.Api.Three.Field.Search {
                 {"400", ErrorCollection.CreateFromDiscriminatorValue},
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PageBeanField>(requestInfo, PageBeanField.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanField>(requestInfo, PageBeanField.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of fields for Classic Jira projects. The list can include: *  all fields *  specific fields, by defining `id` *  fields that contain a string in the field name or description, by defining `query` *  specific fields that contain a string in the field name or description, by defining `id` and `query`Only custom fields can be queried, `type` must be set to `custom`.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

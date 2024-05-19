@@ -52,7 +52,7 @@ namespace JiraLib.Rest.Api.Three.User.Email {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<UnrestrictedUserEmail>(requestInfo, UnrestrictedUserEmail.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<UnrestrictedUserEmail>(requestInfo, UnrestrictedUserEmail.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a user&apos;s email address. This API is only available to apps approved by Atlassian, according to these [guidelines](https://community.developer.atlassian.com/t/guidelines-for-requesting-access-to-email-address/27603).

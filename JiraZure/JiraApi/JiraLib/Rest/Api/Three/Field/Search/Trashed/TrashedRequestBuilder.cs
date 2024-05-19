@@ -53,7 +53,7 @@ namespace JiraLib.Rest.Api.Three.Field.Search.Trashed {
                 {"400", ErrorCollection.CreateFromDiscriminatorValue},
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PageBeanField>(requestInfo, PageBeanField.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanField>(requestInfo, PageBeanField.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of fields in the trash. The list may be restricted to fields whose field name or description partially match a string.Only custom fields can be queried, `type` must be set to `custom`.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

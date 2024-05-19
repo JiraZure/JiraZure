@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.ClassificationLevels {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<DataClassificationLevelsBean>(requestInfo, DataClassificationLevelsBean.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<DataClassificationLevelsBean>(requestInfo, DataClassificationLevelsBean.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns all classification levels.**[Permissions](#permissions) required:** None.

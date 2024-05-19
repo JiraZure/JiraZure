@@ -56,7 +56,7 @@ namespace JiraLib.Rest.Api.Three.Issuesecurityschemes.Item.Level.Item.Member.Ite
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
                 {"404", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Removes an issue security level member from an issue security scheme.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

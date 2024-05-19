@@ -72,7 +72,7 @@ namespace JiraLib.Rest.Api.Three.Screens.Item.Tabs {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<ScreenableTab>(requestInfo, ScreenableTab.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<ScreenableTab>(requestInfo, ScreenableTab.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -93,7 +93,7 @@ namespace JiraLib.Rest.Api.Three.Screens.Item.Tabs {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<ScreenableTab>(requestInfo, ScreenableTab.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<ScreenableTab>(requestInfo, ScreenableTab.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the list of tabs for a screen.**[Permissions](#permissions) required:** *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). *  *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) when the project key is specified, providing that the screen is associated with the project through a Screen Scheme and Issue Type Screen Scheme.

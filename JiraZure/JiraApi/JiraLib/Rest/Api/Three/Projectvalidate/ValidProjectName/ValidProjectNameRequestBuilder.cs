@@ -45,7 +45,7 @@ namespace JiraLib.Rest.Api.Three.Projectvalidate.ValidProjectName {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Checks that a project name isn&apos;t in use. If the name isn&apos;t in use, the passed string is returned. If the name is in use, this operation attempts to generate a valid project name based on the one supplied, usually by adding a sequence number. If a valid project name cannot be generated, a 404 response is returned.**[Permissions](#permissions) required:** None.

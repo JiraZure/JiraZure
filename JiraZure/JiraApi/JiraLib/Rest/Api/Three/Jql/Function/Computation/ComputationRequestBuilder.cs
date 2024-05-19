@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Jql.Function.Computation {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageBeanJqlFunctionPrecomputationBean>(requestInfo, PageBeanJqlFunctionPrecomputationBean.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanJqlFunctionPrecomputationBean>(requestInfo, PageBeanJqlFunctionPrecomputationBean.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the precomputation value of a function created by a Forge/Connect app.**[Permissions](#permissions) required:** An API for apps to update their own precomputations.
@@ -65,7 +65,7 @@ namespace JiraLib.Rest.Api.Three.Jql.Function.Computation {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the list of a function&apos;s precomputations along with information about when they were created, updated, and last used. Each precomputation has a `value` \- the JQL fragment to replace the custom function clause with.**[Permissions](#permissions) required:** This API is only accessible to apps and apps can only inspect their own functions.

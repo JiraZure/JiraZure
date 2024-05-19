@@ -47,7 +47,7 @@ namespace JiraLib.Rest.Api.Three.Field.Item.Context.Item.Issuetype.Remove {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Removes issue types from a custom field context.A custom field context without any issue types applies to all issue types.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

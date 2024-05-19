@@ -53,7 +53,7 @@ namespace JiraLib.Rest.Api.Three.Jql.Parse {
             {
                 {"400", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ParsedJqlQueries>(requestInfo, ParsedJqlQueries.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<ParsedJqlQueries>(requestInfo, ParsedJqlQueries.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Parses and validates JQL queries.Validation is performed in context of the current user.This operation can be accessed anonymously.**[Permissions](#permissions) required:** None.

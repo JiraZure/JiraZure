@@ -53,7 +53,7 @@ namespace JiraLib.Rest.Api.Three.License.ApproximateLicenseCount.Product.Item {
                 {"401", ErrorCollection.CreateFromDiscriminatorValue},
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<LicenseMetric>(requestInfo, LicenseMetric.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<LicenseMetric>(requestInfo, LicenseMetric.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the total approximate number of user accounts for a single Jira license. Note that this information is cached with a 7-day lifecycle and could be stale at the time of call.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

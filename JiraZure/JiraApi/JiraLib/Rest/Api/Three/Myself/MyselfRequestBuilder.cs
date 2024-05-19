@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Myself {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<JiraLib.Models.User>(requestInfo, JiraLib.Models.User.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.User>(requestInfo, JiraLib.Models.User.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns details for the current user.**[Permissions](#permissions) required:** Permission to access Jira.

@@ -44,7 +44,7 @@ namespace JiraLib.Rest.Api.Three.Issuetypescheme.Item.Issuetype.Item {
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Removes an issue type from an issue type scheme.This operation cannot remove: *  any issue type used by issues. *  any issue types from the default issue type scheme. *  the last standard issue type from an issue type scheme.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

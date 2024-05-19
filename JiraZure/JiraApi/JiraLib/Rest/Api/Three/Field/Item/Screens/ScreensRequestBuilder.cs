@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Field.Item.Screens {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageBeanScreenWithTab>(requestInfo, PageBeanScreenWithTab.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanScreenWithTab>(requestInfo, PageBeanScreenWithTab.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of the screens a field is used in.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

@@ -45,7 +45,7 @@ namespace JiraLib.Rest.Api.Three.Projectvalidate.ValidProjectKey {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Validates a project key and, if the key is invalid or in use, generates a valid random string for the project key.**[Permissions](#permissions) required:** None.

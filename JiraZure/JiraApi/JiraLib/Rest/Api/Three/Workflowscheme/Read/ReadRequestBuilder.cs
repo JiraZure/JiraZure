@@ -48,7 +48,7 @@ namespace JiraLib.Rest.Api.Three.Workflowscheme.Read {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<WorkflowSchemeReadResponse>(requestInfo, WorkflowSchemeReadResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<WorkflowSchemeReadResponse>(requestInfo, WorkflowSchemeReadResponse.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>

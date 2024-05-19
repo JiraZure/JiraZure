@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Project.Item.Notificationscheme {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<JiraLib.Models.NotificationScheme>(requestInfo, JiraLib.Models.NotificationScheme.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.NotificationScheme>(requestInfo, JiraLib.Models.NotificationScheme.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets a [notification scheme](https://confluence.atlassian.com/x/8YdKLg) associated with the project.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg).

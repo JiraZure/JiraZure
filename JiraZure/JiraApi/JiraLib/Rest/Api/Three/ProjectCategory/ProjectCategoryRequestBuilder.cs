@@ -72,7 +72,7 @@ namespace JiraLib.Rest.Api.Three.ProjectCategory {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<JiraLib.Models.ProjectCategory>(requestInfo, JiraLib.Models.ProjectCategory.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<JiraLib.Models.ProjectCategory>(requestInfo, JiraLib.Models.ProjectCategory.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -93,7 +93,7 @@ namespace JiraLib.Rest.Api.Three.ProjectCategory {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<JiraLib.Models.ProjectCategory>(requestInfo, JiraLib.Models.ProjectCategory.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.ProjectCategory>(requestInfo, JiraLib.Models.ProjectCategory.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns all project categories.**[Permissions](#permissions) required:** Permission to access Jira.

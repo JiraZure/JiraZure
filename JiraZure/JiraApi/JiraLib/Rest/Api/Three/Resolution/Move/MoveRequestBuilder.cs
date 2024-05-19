@@ -58,7 +58,7 @@ namespace JiraLib.Rest.Api.Three.Resolution.Move {
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
                 {"404", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Changes the order of issue resolutions.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

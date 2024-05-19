@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Issuetypescreenscheme.Mapping {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageBeanIssueTypeScreenSchemeItem>(requestInfo, PageBeanIssueTypeScreenSchemeItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanIssueTypeScreenSchemeItem>(requestInfo, PageBeanIssueTypeScreenSchemeItem.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of issue type screen scheme items.Only issue type screen schemes used in classic projects are returned.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

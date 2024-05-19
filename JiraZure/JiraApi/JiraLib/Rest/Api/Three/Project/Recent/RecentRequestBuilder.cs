@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Project.Recent {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<JiraLib.Models.Project>(requestInfo, JiraLib.Models.Project.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<JiraLib.Models.Project>(requestInfo, JiraLib.Models.Project.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>

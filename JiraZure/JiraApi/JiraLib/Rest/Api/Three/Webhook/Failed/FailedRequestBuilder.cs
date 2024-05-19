@@ -53,7 +53,7 @@ namespace JiraLib.Rest.Api.Three.Webhook.Failed {
                 {"400", ErrorCollection.CreateFromDiscriminatorValue},
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<FailedWebhooks>(requestInfo, FailedWebhooks.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<FailedWebhooks>(requestInfo, FailedWebhooks.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns webhooks that have recently failed to be delivered to the requesting app after the maximum number of retries.After 72 hours the failure may no longer be returned by this operation.The oldest failure is returned first.This method uses a cursor-based pagination. To request the next page use the failure time of the last webhook on the list as the `failedAfter` value or use the URL provided in `next`.**[Permissions](#permissions) required:** Only [Connect apps](https://developer.atlassian.com/cloud/jira/platform/index/#connect-apps) can use this operation.

@@ -55,7 +55,7 @@ namespace JiraLib.Rest.Api.Three.DataPolicy.Project {
                 {"401", ErrorCollection.CreateFromDiscriminatorValue},
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ProjectDataPolicies>(requestInfo, ProjectDataPolicies.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<ProjectDataPolicies>(requestInfo, ProjectDataPolicies.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns data policies for the projects specified in the request.

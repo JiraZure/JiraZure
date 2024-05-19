@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Project.Item.Statuses {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<IssueTypeWithStatus>(requestInfo, IssueTypeWithStatus.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<IssueTypeWithStatus>(requestInfo, IssueTypeWithStatus.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>

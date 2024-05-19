@@ -59,7 +59,7 @@ namespace JiraLib.Rest.Api.Three.Issue.Item.Properties {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PropertyKeys>(requestInfo, PropertyKeys.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PropertyKeys>(requestInfo, PropertyKeys.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the URLs and keys of an issue&apos;s properties.This operation can be accessed anonymously.**[Permissions](#permissions) required:** Property details are only returned where the user has: *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue. *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.

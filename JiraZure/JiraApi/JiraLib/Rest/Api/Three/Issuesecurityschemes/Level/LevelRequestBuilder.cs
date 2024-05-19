@@ -67,7 +67,7 @@ namespace JiraLib.Rest.Api.Three.Issuesecurityschemes.Level {
                 {"401", ErrorCollection.CreateFromDiscriminatorValue},
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PageBeanSecurityLevel>(requestInfo, PageBeanSecurityLevel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanSecurityLevel>(requestInfo, PageBeanSecurityLevel.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of issue security levels.Only issue security levels in the context of classic projects are returned.Filtering using IDs is inclusive: if you specify both security scheme IDs and level IDs, the result will include both specified issue security levels and all issue security levels from the specified schemes.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

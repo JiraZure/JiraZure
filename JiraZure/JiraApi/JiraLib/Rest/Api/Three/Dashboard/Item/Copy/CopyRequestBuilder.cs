@@ -57,7 +57,7 @@ namespace JiraLib.Rest.Api.Three.Dashboard.Item.Copy {
                 {"401", ErrorCollection.CreateFromDiscriminatorValue},
                 {"404", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<JiraLib.Models.Dashboard>(requestInfo, JiraLib.Models.Dashboard.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.Dashboard>(requestInfo, JiraLib.Models.Dashboard.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Copies a dashboard. Any values provided in the `dashboard` parameter replace those in the copied dashboard.**[Permissions](#permissions) required:** NoneThe dashboard to be copied must be owned by or shared with the user.

@@ -52,7 +52,7 @@ namespace JiraLib.Rest.Api.Three.Project.TypeNamespace.Item {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<ProjectType>(requestInfo, ProjectType.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<ProjectType>(requestInfo, ProjectType.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [project type](https://confluence.atlassian.com/x/Var1Nw).This operation can be accessed anonymously.**[Permissions](#permissions) required:** None.

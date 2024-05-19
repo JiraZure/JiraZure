@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Attachment.Item.Expand.Human {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<AttachmentArchiveMetadataReadable>(requestInfo, AttachmentArchiveMetadataReadable.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<AttachmentArchiveMetadataReadable>(requestInfo, AttachmentArchiveMetadataReadable.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the metadata for the contents of an attachment, if it is an archive, and metadata for the attachment itself. For example, if the attachment is a ZIP archive, then information about the files in the archive is returned and metadata for the ZIP archive. Currently, only the ZIP archive format is supported.Use this operation to retrieve data that is presented to the user, as this operation returns the metadata for the attachment itself, such as the attachment&apos;s ID and name. Otherwise, use [ Get contents metadata for an expanded attachment](#api-rest-api-3-attachment-id-expand-raw-get), which only returns the metadata for the attachment&apos;s contents.This operation can be accessed anonymously.**[Permissions](#permissions) required:** For the issue containing the attachment: *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project that the issue is in. *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.

@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Applicationrole.Item {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<JiraLib.Models.ApplicationRole>(requestInfo, JiraLib.Models.ApplicationRole.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.ApplicationRole>(requestInfo, JiraLib.Models.ApplicationRole.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns an application role.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

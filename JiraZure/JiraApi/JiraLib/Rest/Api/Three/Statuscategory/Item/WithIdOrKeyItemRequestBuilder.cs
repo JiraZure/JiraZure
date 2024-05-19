@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Statuscategory.Item {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<JiraLib.Models.StatusCategory>(requestInfo, JiraLib.Models.StatusCategory.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.StatusCategory>(requestInfo, JiraLib.Models.StatusCategory.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a status category. Status categories provided a mechanism for categorizing [statuses](#api-rest-api-3-status-idOrName-get).**[Permissions](#permissions) required:** Permission to access Jira.

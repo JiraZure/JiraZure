@@ -71,7 +71,7 @@ namespace JiraLib.Rest.Api.Three.Issuesecurityschemes.Item.Level {
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
                 {"404", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Adds levels and levels&apos; members to the issue security scheme. You can add up to 100 levels per request.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

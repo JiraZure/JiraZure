@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.VersionNamespace.Item.RelatedIssueCounts {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<VersionIssueCounts>(requestInfo, VersionIssueCounts.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<VersionIssueCounts>(requestInfo, VersionIssueCounts.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the following counts for a version: *  Number of issues where the `fixVersion` is set to the version. *  Number of issues where the `affectedVersion` is set to the version. *  Number of issues where a version custom field is set to the version.This operation can be accessed anonymously.**[Permissions](#permissions) required:** *Browse projects* project permission for the project that contains the version.

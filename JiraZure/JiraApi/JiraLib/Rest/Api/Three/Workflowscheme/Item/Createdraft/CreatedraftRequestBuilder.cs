@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Workflowscheme.Item.Createdraft {
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<JiraLib.Models.WorkflowScheme>(requestInfo, JiraLib.Models.WorkflowScheme.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.WorkflowScheme>(requestInfo, JiraLib.Models.WorkflowScheme.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a draft workflow scheme from an active workflow scheme, by copying the active workflow scheme. Note that an active workflow scheme can only have one draft workflow scheme.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

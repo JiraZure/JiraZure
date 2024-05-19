@@ -51,7 +51,7 @@ namespace JiraLib.Rest.Api.Three.Resolution.Search {
             {
                 {"401", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PageBeanResolutionJsonBean>(requestInfo, PageBeanResolutionJsonBean.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanResolutionJsonBean>(requestInfo, PageBeanResolutionJsonBean.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of resolutions. The list can contain all resolutions or a subset determined by any combination of these criteria: *  a list of resolutions IDs. *  whether the field configuration is a default. This returns resolutions from company-managed (classic) projects only, as there is no concept of default resolutions in team-managed projects.**[Permissions](#permissions) required:** Permission to access Jira.

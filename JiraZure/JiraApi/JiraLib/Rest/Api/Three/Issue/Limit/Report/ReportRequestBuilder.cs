@@ -48,7 +48,7 @@ namespace JiraLib.Rest.Api.Three.Issue.Limit.Report {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToGetRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<IssueLimitReportResponseBean>(requestInfo, IssueLimitReportResponseBean.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<IssueLimitReportResponseBean>(requestInfo, IssueLimitReportResponseBean.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns all issues breaching and approaching per-issue limits.**[Permissions](#permissions) required:** *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) is required for the project the issues are in. Results may be incomplete otherwise *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

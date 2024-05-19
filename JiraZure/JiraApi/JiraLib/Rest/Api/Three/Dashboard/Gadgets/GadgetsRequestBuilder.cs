@@ -53,7 +53,7 @@ namespace JiraLib.Rest.Api.Three.Dashboard.Gadgets {
                 {"400", ErrorCollection.CreateFromDiscriminatorValue},
                 {"401", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AvailableDashboardGadgetsResponse>(requestInfo, AvailableDashboardGadgetsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<AvailableDashboardGadgetsResponse>(requestInfo, AvailableDashboardGadgetsResponse.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets a list of all available gadgets that can be added to all dashboards.**[Permissions](#permissions) required:** None.

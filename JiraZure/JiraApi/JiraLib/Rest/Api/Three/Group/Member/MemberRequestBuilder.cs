@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Group.Member {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageBeanUserDetails>(requestInfo, PageBeanUserDetails.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanUserDetails>(requestInfo, PageBeanUserDetails.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of all users in a group.Note that users are ordered by username, however the username is not returned in the results due to privacy reasons.**[Permissions](#permissions) required:** either of: *  *Browse users and groups* [global permission](https://confluence.atlassian.com/x/x4dKLg). *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

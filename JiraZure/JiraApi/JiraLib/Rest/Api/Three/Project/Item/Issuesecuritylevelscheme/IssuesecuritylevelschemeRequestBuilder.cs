@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Project.Item.Issuesecuritylevelscheme {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<SecurityScheme>(requestInfo, SecurityScheme.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<SecurityScheme>(requestInfo, SecurityScheme.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the [issue security scheme](https://confluence.atlassian.com/x/J4lKLg) associated with the project.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) or the *Administer Projects* [project permission](https://confluence.atlassian.com/x/yodKLg).

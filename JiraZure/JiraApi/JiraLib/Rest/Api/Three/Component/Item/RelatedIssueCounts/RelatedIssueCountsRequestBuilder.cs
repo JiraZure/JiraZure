@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Component.Item.RelatedIssueCounts {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<ComponentIssuesCount>(requestInfo, ComponentIssuesCount.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<ComponentIssuesCount>(requestInfo, ComponentIssuesCount.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the counts of issues assigned to the component.This operation can be accessed anonymously.**Deprecation notice:** The required OAuth 2.0 scopes will be updated on June 15, 2024. *  **Classic**: `read:jira-work` *  **Granular**: `read:field:jira`, `read:project.component:jira`**[Permissions](#permissions) required:** None.

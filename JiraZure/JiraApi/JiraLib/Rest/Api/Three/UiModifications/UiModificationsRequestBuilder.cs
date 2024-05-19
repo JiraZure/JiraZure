@@ -59,7 +59,7 @@ namespace JiraLib.Rest.Api.Three.UiModifications {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageBeanUiModificationDetails>(requestInfo, PageBeanUiModificationDetails.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanUiModificationDetails>(requestInfo, PageBeanUiModificationDetails.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a UI modification. UI modification can only be created by Forge apps.Each app can define up to 3000 UI modifications. Each UI modification can define up to 1000 contexts. The same context can be assigned to maximum 100 UI modifications.**[Permissions](#permissions) required:** *  *None* if the UI modification is created without contexts. *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for one or more projects, if the UI modification is created with contexts.
@@ -84,7 +84,7 @@ namespace JiraLib.Rest.Api.Three.UiModifications {
             {
                 {"404", DetailedErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UiModificationIdentifiers>(requestInfo, UiModificationIdentifiers.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<UiModificationIdentifiers>(requestInfo, UiModificationIdentifiers.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets UI modifications. UI modifications can only be retrieved by Forge apps.**[Permissions](#permissions) required:** None.

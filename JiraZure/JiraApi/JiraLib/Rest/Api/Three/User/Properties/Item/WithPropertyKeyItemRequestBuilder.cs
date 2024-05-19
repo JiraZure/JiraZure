@@ -45,7 +45,7 @@ namespace JiraLib.Rest.Api.Three.User.Properties.Item {
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the value of a user&apos;s property. If no property key is provided [Get user property keys](#api-rest-api-3-user-properties-get) is called.Note: This operation does not access the [user properties](https://confluence.atlassian.com/x/8YxjL) created and maintained in Jira.**[Permissions](#permissions) required:** *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), to get a property from any user. *  Access to Jira, to get a property from the calling user&apos;s record.
@@ -63,7 +63,7 @@ namespace JiraLib.Rest.Api.Three.User.Properties.Item {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<EntityProperty>(requestInfo, EntityProperty.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<EntityProperty>(requestInfo, EntityProperty.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Sets the value of a user&apos;s property. Use this resource to store custom data against a user.Note: This operation does not access the [user properties](https://confluence.atlassian.com/x/8YxjL) created and maintained in Jira.**[Permissions](#permissions) required:** *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), to set a property on any user. *  Access to Jira, to set a property on the calling user&apos;s record.
@@ -83,7 +83,7 @@ namespace JiraLib.Rest.Api.Three.User.Properties.Item {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a property from a user.Note: This operation does not access the [user properties](https://confluence.atlassian.com/x/8YxjL) created and maintained in Jira.**[Permissions](#permissions) required:** *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg), to delete a property from any user. *  Access to Jira, to delete a property from the calling user&apos;s record.

@@ -90,7 +90,7 @@ namespace JiraLib.Rest.Api.Three.Workflowscheme {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageBeanWorkflowScheme>(requestInfo, PageBeanWorkflowScheme.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanWorkflowScheme>(requestInfo, PageBeanWorkflowScheme.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a workflow scheme.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
@@ -110,7 +110,7 @@ namespace JiraLib.Rest.Api.Three.Workflowscheme {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<JiraLib.Models.WorkflowScheme>(requestInfo, JiraLib.Models.WorkflowScheme.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.WorkflowScheme>(requestInfo, JiraLib.Models.WorkflowScheme.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of all workflow schemes, not including draft workflow schemes.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

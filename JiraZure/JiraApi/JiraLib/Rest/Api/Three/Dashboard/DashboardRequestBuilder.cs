@@ -84,7 +84,7 @@ namespace JiraLib.Rest.Api.Three.Dashboard {
                 {"400", ErrorCollection.CreateFromDiscriminatorValue},
                 {"401", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PageOfDashboards>(requestInfo, PageOfDashboards.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageOfDashboards>(requestInfo, PageOfDashboards.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a dashboard.**[Permissions](#permissions) required:** None.
@@ -111,7 +111,7 @@ namespace JiraLib.Rest.Api.Three.Dashboard {
                 {"400", ErrorCollection.CreateFromDiscriminatorValue},
                 {"401", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<JiraLib.Models.Dashboard>(requestInfo, JiraLib.Models.Dashboard.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.Dashboard>(requestInfo, JiraLib.Models.Dashboard.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a list of dashboards owned by or shared with the user. The list may be filtered to include only favorite or owned dashboards.This operation can be accessed anonymously.**[Permissions](#permissions) required:** None.

@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Issuetype.Item.Alternatives {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<IssueTypeDetails>(requestInfo, IssueTypeDetails.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<IssueTypeDetails>(requestInfo, IssueTypeDetails.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>

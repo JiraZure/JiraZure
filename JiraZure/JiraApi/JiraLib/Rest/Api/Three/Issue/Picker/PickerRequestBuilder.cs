@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Issue.Picker {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<IssuePickerSuggestions>(requestInfo, IssuePickerSuggestions.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<IssuePickerSuggestions>(requestInfo, IssuePickerSuggestions.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns lists of issues matching a query string. Use this resource to provide auto-completion suggestions when the user is looking for an issue using a word or string.This operation returns two lists: *  `History Search` which includes issues from the user&apos;s history of created, edited, or viewed issues that contain the string in the `query` parameter. *  `Current Search` which includes issues that match the JQL expression in `currentJQL` and contain the string in the `query` parameter.This operation can be accessed anonymously.**[Permissions](#permissions) required:** None.

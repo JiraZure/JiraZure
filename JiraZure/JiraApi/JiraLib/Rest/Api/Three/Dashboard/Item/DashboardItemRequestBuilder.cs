@@ -70,7 +70,7 @@ namespace JiraLib.Rest.Api.Three.Dashboard.Item {
                 {"400", ErrorCollection.CreateFromDiscriminatorValue},
                 {"401", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a dashboard.This operation can be accessed anonymously.**[Permissions](#permissions) required:** None.However, to get a dashboard, the dashboard must be shared with the user or the user must own it. Note, users with the *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg) are considered owners of the System dashboard. The System dashboard is considered to be shared with all other users.
@@ -95,7 +95,7 @@ namespace JiraLib.Rest.Api.Three.Dashboard.Item {
                 {"400", ErrorCollection.CreateFromDiscriminatorValue},
                 {"401", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<JiraLib.Models.Dashboard>(requestInfo, JiraLib.Models.Dashboard.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.Dashboard>(requestInfo, JiraLib.Models.Dashboard.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a dashboard, replacing all the dashboard details with those provided.**[Permissions](#permissions) required:** NoneThe dashboard to be updated must be owned by the user.
@@ -124,7 +124,7 @@ namespace JiraLib.Rest.Api.Three.Dashboard.Item {
                 {"401", ErrorCollection.CreateFromDiscriminatorValue},
                 {"404", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<JiraLib.Models.Dashboard>(requestInfo, JiraLib.Models.Dashboard.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.Dashboard>(requestInfo, JiraLib.Models.Dashboard.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a dashboard.**[Permissions](#permissions) required:** NoneThe dashboard to be deleted must be owned by the user.

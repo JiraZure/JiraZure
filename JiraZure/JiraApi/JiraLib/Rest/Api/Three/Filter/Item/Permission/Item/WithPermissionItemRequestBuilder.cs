@@ -45,7 +45,7 @@ namespace JiraLib.Rest.Api.Three.Filter.Item.Permission.Item {
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a share permission for a filter. A filter can be shared with groups, projects, all logged-in users, or the public. Sharing with all logged-in users or the public is known as a global share permission.This operation can be accessed anonymously.**[Permissions](#permissions) required:** None, however, a share permission is only returned for: *  filters owned by the user. *  filters shared with a group that the user is a member of. *  filters shared with a private project that the user has *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for. *  filters shared with a public project. *  filters shared with the public.
@@ -63,7 +63,7 @@ namespace JiraLib.Rest.Api.Three.Filter.Item.Permission.Item {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<SharePermission>(requestInfo, SharePermission.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<SharePermission>(requestInfo, SharePermission.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a share permission from a filter.**[Permissions](#permissions) required:** Permission to access Jira and the user must own the filter.

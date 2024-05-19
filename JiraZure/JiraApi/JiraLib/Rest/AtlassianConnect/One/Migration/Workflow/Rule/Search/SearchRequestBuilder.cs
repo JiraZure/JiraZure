@@ -48,7 +48,7 @@ namespace JiraLib.Rest.AtlassianConnect.One.Migration.Workflow.Rule.Search {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<WorkflowRulesSearchDetails>(requestInfo, WorkflowRulesSearchDetails.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<WorkflowRulesSearchDetails>(requestInfo, WorkflowRulesSearchDetails.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns configurations for workflow transition rules migrated from server to cloud and owned by the calling Connect app.

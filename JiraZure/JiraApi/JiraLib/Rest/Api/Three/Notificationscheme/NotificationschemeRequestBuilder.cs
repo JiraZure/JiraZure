@@ -78,7 +78,7 @@ namespace JiraLib.Rest.Api.Three.Notificationscheme {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageBeanNotificationScheme>(requestInfo, PageBeanNotificationScheme.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanNotificationScheme>(requestInfo, PageBeanNotificationScheme.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a notification scheme with notifications. You can create up to 1000 notifications per request.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
@@ -107,7 +107,7 @@ namespace JiraLib.Rest.Api.Three.Notificationscheme {
                 {"401", ErrorCollection.CreateFromDiscriminatorValue},
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<NotificationSchemeId>(requestInfo, NotificationSchemeId.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<NotificationSchemeId>(requestInfo, NotificationSchemeId.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of [notification schemes](https://confluence.atlassian.com/x/8YdKLg) ordered by the display name.*Note that you should allow for events without recipients to appear in responses.***[Permissions](#permissions) required:** Permission to access Jira, however, the user must have permission to administer at least one project associated with a notification scheme for it to be returned.

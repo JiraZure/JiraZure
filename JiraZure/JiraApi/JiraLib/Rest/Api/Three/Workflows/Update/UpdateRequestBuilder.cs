@@ -54,7 +54,7 @@ namespace JiraLib.Rest.Api.Three.Workflows.Update {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<WorkflowUpdateResponse>(requestInfo, WorkflowUpdateResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<WorkflowUpdateResponse>(requestInfo, WorkflowUpdateResponse.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update workflows and related statuses.**[Permissions](#permissions) required:** *  *Administer Jira* project permission to create all, including global-scoped, workflows *  *Administer projects* project permissions to create project-scoped workflows

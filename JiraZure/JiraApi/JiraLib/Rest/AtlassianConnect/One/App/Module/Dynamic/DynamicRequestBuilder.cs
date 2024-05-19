@@ -50,7 +50,7 @@ namespace JiraLib.Rest.AtlassianConnect.One.App.Module.Dynamic {
             {
                 {"401", ErrorMessage.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns all modules registered dynamically by the calling app.**[Permissions](#permissions) required:** Only Connect apps can make this request.
@@ -73,7 +73,7 @@ namespace JiraLib.Rest.AtlassianConnect.One.App.Module.Dynamic {
             {
                 {"401", ErrorMessage.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ConnectModules>(requestInfo, ConnectModules.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<ConnectModules>(requestInfo, ConnectModules.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Registers a list of modules.**[Permissions](#permissions) required:** Only Connect apps can make this request.
@@ -100,7 +100,7 @@ namespace JiraLib.Rest.AtlassianConnect.One.App.Module.Dynamic {
                 {"400", ErrorMessage.CreateFromDiscriminatorValue},
                 {"401", ErrorMessage.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Remove all or a list of modules registered by the calling app.**[Permissions](#permissions) required:** Only Connect apps can make this request.

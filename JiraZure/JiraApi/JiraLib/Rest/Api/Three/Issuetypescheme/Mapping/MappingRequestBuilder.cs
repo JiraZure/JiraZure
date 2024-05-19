@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Issuetypescheme.Mapping {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageBeanIssueTypeSchemeMapping>(requestInfo, PageBeanIssueTypeSchemeMapping.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanIssueTypeSchemeMapping>(requestInfo, PageBeanIssueTypeSchemeMapping.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of issue type scheme items.Only issue type scheme items used in classic projects are returned.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Issuesecurityschemes.Item.Members {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageBeanIssueSecurityLevelMember>(requestInfo, PageBeanIssueSecurityLevelMember.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanIssueSecurityLevelMember>(requestInfo, PageBeanIssueSecurityLevelMember.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns issue security level members.Only issue security level members in context of classic projects are returned.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

@@ -78,7 +78,7 @@ namespace JiraLib.Rest.Api.Three.Priority {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<JiraLib.Models.Priority>(requestInfo, JiraLib.Models.Priority.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<JiraLib.Models.Priority>(requestInfo, JiraLib.Models.Priority.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -108,7 +108,7 @@ namespace JiraLib.Rest.Api.Three.Priority {
                 {"401", ErrorCollection.CreateFromDiscriminatorValue},
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PriorityId>(requestInfo, PriorityId.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PriorityId>(requestInfo, PriorityId.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the list of all issue priorities.**[Permissions](#permissions) required:** Permission to access Jira.

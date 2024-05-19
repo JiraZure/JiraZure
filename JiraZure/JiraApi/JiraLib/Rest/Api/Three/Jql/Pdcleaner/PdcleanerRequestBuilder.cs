@@ -48,7 +48,7 @@ namespace JiraLib.Rest.Api.Three.Jql.Pdcleaner {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<ConvertedJQLQueries>(requestInfo, ConvertedJQLQueries.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<ConvertedJQLQueries>(requestInfo, ConvertedJQLQueries.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Converts one or more JQL queries with user identifiers (username or user key) to equivalent JQL queries with account IDs.You may wish to use this operation if your system stores JQL queries and you want to make them GDPR-compliant. For more information about GDPR-related changes, see the [migration guide](https://developer.atlassian.com/cloud/jira/platform/deprecation-notice-user-privacy-api-migration-guide/).**[Permissions](#permissions) required:** Permission to access Jira.

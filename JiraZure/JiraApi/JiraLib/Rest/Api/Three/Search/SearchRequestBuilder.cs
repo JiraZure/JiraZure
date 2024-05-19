@@ -52,7 +52,7 @@ namespace JiraLib.Rest.Api.Three.Search {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<SearchResults>(requestInfo, SearchResults.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<SearchResults>(requestInfo, SearchResults.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Searches for issues using [JQL](https://confluence.atlassian.com/x/egORLQ).There is a [GET](#api-rest-api-3-search-get) version of this resource that can be used for smaller JQL query expressions.This operation can be accessed anonymously.**[Permissions](#permissions) required:** Issues are included in the response where the user has: *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue. *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.
@@ -72,7 +72,7 @@ namespace JiraLib.Rest.Api.Three.Search {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<SearchResults>(requestInfo, SearchResults.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<SearchResults>(requestInfo, SearchResults.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Searches for issues using [JQL](https://confluence.atlassian.com/x/egORLQ).If the JQL query expression is too large to be encoded as a query parameter, use the [POST](#api-rest-api-3-search-post) version of this resource.This operation can be accessed anonymously.**[Permissions](#permissions) required:** Issues are included in the response where the user has: *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the issue. *  If [issue-level security](https://confluence.atlassian.com/x/J4lKLg) is configured, issue-level security permission to view the issue.

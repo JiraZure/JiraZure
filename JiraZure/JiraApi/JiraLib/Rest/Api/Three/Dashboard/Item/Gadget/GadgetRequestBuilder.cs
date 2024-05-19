@@ -77,7 +77,7 @@ namespace JiraLib.Rest.Api.Three.Dashboard.Item.Gadget {
             {
                 {"404", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DashboardGadgetResponse>(requestInfo, DashboardGadgetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<DashboardGadgetResponse>(requestInfo, DashboardGadgetResponse.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Adds a gadget to a dashboard.**[Permissions](#permissions) required:** None.
@@ -104,7 +104,7 @@ namespace JiraLib.Rest.Api.Three.Dashboard.Item.Gadget {
                 {"400", ErrorCollection.CreateFromDiscriminatorValue},
                 {"404", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DashboardGadget>(requestInfo, DashboardGadget.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<DashboardGadget>(requestInfo, DashboardGadget.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a list of dashboard gadgets on a dashboard.This operation returns: *  Gadgets from a list of IDs, when `id` is set. *  Gadgets with a module key, when `moduleKey` is set. *  Gadgets from a list of URIs, when `uri` is set. *  All gadgets, when no other parameters are set.This operation can be accessed anonymously.**[Permissions](#permissions) required:** None.

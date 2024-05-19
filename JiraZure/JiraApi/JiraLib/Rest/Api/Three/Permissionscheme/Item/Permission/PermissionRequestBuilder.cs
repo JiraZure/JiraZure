@@ -72,7 +72,7 @@ namespace JiraLib.Rest.Api.Three.Permissionscheme.Item.Permission {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PermissionGrants>(requestInfo, PermissionGrants.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PermissionGrants>(requestInfo, PermissionGrants.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a permission grant in a permission scheme.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
@@ -92,7 +92,7 @@ namespace JiraLib.Rest.Api.Three.Permissionscheme.Item.Permission {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<PermissionGrant>(requestInfo, PermissionGrant.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PermissionGrant>(requestInfo, PermissionGrant.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns all permission grants for a permission scheme.**[Permissions](#permissions) required:** Permission to access Jira.

@@ -52,7 +52,7 @@ namespace JiraLib.Rest.Forge.One.App.Properties.Item {
                 {"400", OperationMessage.CreateFromDiscriminatorValue},
                 {"404", OperationMessage.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Sets the value of a Forge app&apos;s property.These values can be retrieved in [Jira expressions](https://developer.atlassian.com/cloud/jira/platform/jira-expressions/)through the `app` [context variable](https://developer.atlassian.com/cloud/jira/platform/jira-expressions/#context-variables).For other use cases, use the [Storage API](https://developer.atlassian.com/platform/forge/runtime-reference/storage-api/).The value of the request body must be a [valid](http://tools.ietf.org/html/rfc4627), non-empty JSON blob. The maximum length is 32768 characters.**[Permissions](#permissions) required:** Only Forge apps can make this request.
@@ -77,7 +77,7 @@ namespace JiraLib.Rest.Forge.One.App.Properties.Item {
             {
                 {"400", OperationMessage.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<OperationMessage>(requestInfo, OperationMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<OperationMessage>(requestInfo, OperationMessage.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a Forge app&apos;s property.**[Permissions](#permissions) required:** Only Forge apps can make this request.

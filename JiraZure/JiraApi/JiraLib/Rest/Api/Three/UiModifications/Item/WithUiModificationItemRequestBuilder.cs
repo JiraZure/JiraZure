@@ -45,7 +45,7 @@ namespace JiraLib.Rest.Api.Three.UiModifications.Item {
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a UI modification. UI modification can only be updated by Forge apps.Each UI modification can define up to 1000 contexts. The same context can be assigned to maximum 100 UI modifications.**[Permissions](#permissions) required:** *  *None* if the UI modification is created without contexts. *  *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for one or more projects, if the UI modification is created with contexts.
@@ -69,7 +69,7 @@ namespace JiraLib.Rest.Api.Three.UiModifications.Item {
             {
                 {"404", DetailedErrorCollection.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a UI modification. All the contexts that belong to the UI modification are deleted too. UI modification can only be deleted by Forge apps.**[Permissions](#permissions) required:** None.

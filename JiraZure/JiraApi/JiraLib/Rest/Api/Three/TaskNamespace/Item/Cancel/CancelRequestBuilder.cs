@@ -45,7 +45,7 @@ namespace JiraLib.Rest.Api.Three.TaskNamespace.Item.Cancel {
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Cancels a task.**[Permissions](#permissions) required:** either of: *  *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg). *  Creator of the task.

@@ -52,7 +52,7 @@ namespace JiraLib.Rest.Api.Three.Users {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<JiraLib.Models.User>(requestInfo, JiraLib.Models.User.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<JiraLib.Models.User>(requestInfo, JiraLib.Models.User.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>

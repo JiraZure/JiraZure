@@ -55,7 +55,7 @@ namespace JiraLib.Rest.Api.Three.Expression.Analyse {
                 {"400", ErrorCollection.CreateFromDiscriminatorValue},
                 {"404", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<JiraExpressionsAnalysis>(requestInfo, JiraExpressionsAnalysis.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraExpressionsAnalysis>(requestInfo, JiraExpressionsAnalysis.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Analyses and validates Jira expressions.As an experimental feature, this operation can also attempt to type-check the expressions.Learn more about Jira expressions in the [documentation](https://developer.atlassian.com/cloud/jira/platform/jira-expressions/).**[Permissions](#permissions) required**: None.

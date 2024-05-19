@@ -51,7 +51,7 @@ namespace JiraLib.Rest.Api.Three.Statuses {
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a list of the statuses specified by one or more status IDs.**[Permissions](#permissions) required:** *  *Administer projects* [project permission.](https://confluence.atlassian.com/x/yodKLg) *  *Administer Jira* [project permission.](https://confluence.atlassian.com/x/yodKLg)
@@ -69,7 +69,7 @@ namespace JiraLib.Rest.Api.Three.Statuses {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<JiraStatus>(requestInfo, JiraStatus.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<JiraStatus>(requestInfo, JiraStatus.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -90,7 +90,7 @@ namespace JiraLib.Rest.Api.Three.Statuses {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<JiraStatus>(requestInfo, JiraStatus.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<JiraStatus>(requestInfo, JiraStatus.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -110,7 +110,7 @@ namespace JiraLib.Rest.Api.Three.Statuses {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes statuses by ID.**[Permissions](#permissions) required:** *  *Administer projects* [project permission.](https://confluence.atlassian.com/x/yodKLg) *  *Administer Jira* [project permission.](https://confluence.atlassian.com/x/yodKLg)

@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Fieldconfigurationscheme.Mapping {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageBeanFieldConfigurationIssueTypeItem>(requestInfo, PageBeanFieldConfigurationIssueTypeItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanFieldConfigurationIssueTypeItem>(requestInfo, PageBeanFieldConfigurationIssueTypeItem.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of field configuration issue type items.Only items used in classic projects are returned.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

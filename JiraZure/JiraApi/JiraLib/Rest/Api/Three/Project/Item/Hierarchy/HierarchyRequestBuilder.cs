@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Project.Item.Hierarchy {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<ProjectIssueTypeHierarchy>(requestInfo, ProjectIssueTypeHierarchy.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<ProjectIssueTypeHierarchy>(requestInfo, ProjectIssueTypeHierarchy.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the issue type hierarchy for a next-gen project.The issue type hierarchy for a project consists of: *  *Epic* at level 1 (optional). *  One or more issue types at level 0 such as *Story*, *Task*, or *Bug*. Where the issue type *Epic* is defined, these issue types are used to break down the content of an epic. *  *Subtask* at level -1 (optional). This issue type enables level 0 issue types to be broken down into components. Issues based on a level -1 issue type must have a parent issue.**[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.

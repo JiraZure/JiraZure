@@ -59,7 +59,7 @@ namespace JiraLib.Rest.Api.Three.IssueLinkType {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<IssueLinkTypes>(requestInfo, IssueLinkTypes.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<IssueLinkTypes>(requestInfo, IssueLinkTypes.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates an issue link type. Use this operation to create descriptions of the reasons why issues are linked. The issue link type consists of a name and descriptions for a link&apos;s inward and outward relationships.To use this operation, the site must have [issue linking](https://confluence.atlassian.com/x/yoXKM) enabled.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
@@ -79,7 +79,7 @@ namespace JiraLib.Rest.Api.Three.IssueLinkType {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<JiraLib.Models.IssueLinkType>(requestInfo, JiraLib.Models.IssueLinkType.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.IssueLinkType>(requestInfo, JiraLib.Models.IssueLinkType.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a list of all issue link types.To use this operation, the site must have [issue linking](https://confluence.atlassian.com/x/yoXKM) enabled.This operation can be accessed anonymously.**[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for a project in the site.

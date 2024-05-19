@@ -78,7 +78,7 @@ namespace JiraLib.Rest.Api.Three.Field.Item.Context.Item.Option {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageBeanCustomFieldContextOption>(requestInfo, PageBeanCustomFieldContextOption.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanCustomFieldContextOption>(requestInfo, PageBeanCustomFieldContextOption.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates options and, where the custom select field is of the type Select List (cascading), cascading options for a custom select field. The options are added to a context of the field.The maximum number of options that can be created per request is 1000 and each field can have a maximum of 10000 options.This operation works for custom field options created in Jira or the operations from this resource. **To work with issue field select list options created for Connect apps use the [Issue custom field options (apps)](#api-group-issue-custom-field-options--apps-) operations.****[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
@@ -98,7 +98,7 @@ namespace JiraLib.Rest.Api.Three.Field.Item.Context.Item.Option {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<CustomFieldCreatedContextOptionsList>(requestInfo, CustomFieldCreatedContextOptionsList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<CustomFieldCreatedContextOptionsList>(requestInfo, CustomFieldCreatedContextOptionsList.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the options of a custom field.If any of the options are not found, no options are updated. Options where the values in the request match the current values aren&apos;t updated and aren&apos;t reported in the response.Note that this operation **only works for issue field select list options created in Jira or using operations from the [Issue custom field options](#api-group-Issue-custom-field-options) resource**, it cannot be used with issue field select list options created by Connect apps.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
@@ -118,7 +118,7 @@ namespace JiraLib.Rest.Api.Three.Field.Item.Context.Item.Option {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<CustomFieldUpdatedContextOptionsList>(requestInfo, CustomFieldUpdatedContextOptionsList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<CustomFieldUpdatedContextOptionsList>(requestInfo, CustomFieldUpdatedContextOptionsList.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of all custom field option for a context. Options are returned first then cascading options, in the order they display in Jira.This operation works for custom field options created in Jira or the operations from this resource. **To work with issue field select list options created for Connect apps use the [Issue custom field options (apps)](#api-group-issue-custom-field-options--apps-) operations.****[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

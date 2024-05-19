@@ -59,7 +59,7 @@ namespace JiraLib.Rest.Api.Three.DataPolicy {
                 {"401", ErrorCollection.CreateFromDiscriminatorValue},
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WorkspaceDataPolicy>(requestInfo, WorkspaceDataPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<WorkspaceDataPolicy>(requestInfo, WorkspaceDataPolicy.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns data policy for the workspace.

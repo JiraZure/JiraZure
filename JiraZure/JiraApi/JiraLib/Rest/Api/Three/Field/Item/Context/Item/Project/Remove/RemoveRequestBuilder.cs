@@ -47,7 +47,7 @@ namespace JiraLib.Rest.Api.Three.Field.Item.Context.Item.Project.Remove {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Removes a custom field context from projects.A custom field context without any projects applies to all projects. Removing all projects from a custom field context would result in it applying to all projects.If any project in the request is not assigned to the context, or the operation would result in two global contexts for the field, the operation fails.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

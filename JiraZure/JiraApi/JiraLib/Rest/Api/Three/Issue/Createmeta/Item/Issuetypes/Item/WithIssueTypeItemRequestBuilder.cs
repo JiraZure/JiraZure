@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Issue.Createmeta.Item.Issuetypes.Item {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageOfCreateMetaIssueTypeWithField>(requestInfo, PageOfCreateMetaIssueTypeWithField.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageOfCreateMetaIssueTypeWithField>(requestInfo, PageOfCreateMetaIssueTypeWithField.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a page of field metadata for a specified project and issuetype id. Use the information to populate the requests in [ Create issue](#api-rest-api-3-issue-post) and [Create issues](#api-rest-api-3-issue-bulk-post).This operation can be accessed anonymously.**[Permissions](#permissions) required:** *Create issues* [project permission](https://confluence.atlassian.com/x/yodKLg) in the requested projects.

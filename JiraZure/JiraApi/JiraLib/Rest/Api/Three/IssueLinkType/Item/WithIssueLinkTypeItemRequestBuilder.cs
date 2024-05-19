@@ -45,7 +45,7 @@ namespace JiraLib.Rest.Api.Three.IssueLinkType.Item {
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns an issue link type.To use this operation, the site must have [issue linking](https://confluence.atlassian.com/x/yoXKM) enabled.This operation can be accessed anonymously.**[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for a project in the site.
@@ -63,7 +63,7 @@ namespace JiraLib.Rest.Api.Three.IssueLinkType.Item {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<JiraLib.Models.IssueLinkType>(requestInfo, JiraLib.Models.IssueLinkType.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.IssueLinkType>(requestInfo, JiraLib.Models.IssueLinkType.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates an issue link type.To use this operation, the site must have [issue linking](https://confluence.atlassian.com/x/yoXKM) enabled.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
@@ -83,7 +83,7 @@ namespace JiraLib.Rest.Api.Three.IssueLinkType.Item {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<JiraLib.Models.IssueLinkType>(requestInfo, JiraLib.Models.IssueLinkType.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.IssueLinkType>(requestInfo, JiraLib.Models.IssueLinkType.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes an issue link type.To use this operation, the site must have [issue linking](https://confluence.atlassian.com/x/yoXKM) enabled.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

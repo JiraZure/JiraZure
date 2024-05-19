@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.VersionNamespace.Item.UnresolvedIssueCount {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<VersionUnresolvedIssuesCount>(requestInfo, VersionUnresolvedIssuesCount.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<VersionUnresolvedIssuesCount>(requestInfo, VersionUnresolvedIssuesCount.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns counts of the issues and unresolved issues for the project version.This operation can be accessed anonymously.**[Permissions](#permissions) required:** *Browse projects* project permission for the project that contains the version.

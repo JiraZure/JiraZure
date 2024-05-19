@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.ServerInfo {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<ServerInformation>(requestInfo, ServerInformation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<ServerInformation>(requestInfo, ServerInformation.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns information about the Jira instance.This operation can be accessed anonymously.**[Permissions](#permissions) required:** None.

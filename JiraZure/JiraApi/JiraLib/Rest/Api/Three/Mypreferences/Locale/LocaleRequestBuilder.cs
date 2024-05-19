@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Mypreferences.Locale {
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the locale for the user.If the user has no language preference set (which is the default setting) or this resource is accessed anonymous, the browser locale detected by Jira is returned. Jira detects the browser locale using the *Accept-Language* header in the request. However, if this doesn&apos;t match a locale available Jira, the site default locale is returned.This operation can be accessed anonymously.**[Permissions](#permissions) required:** None.
@@ -64,7 +64,7 @@ namespace JiraLib.Rest.Api.Three.Mypreferences.Locale {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<JiraLib.Models.Locale>(requestInfo, JiraLib.Models.Locale.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.Locale>(requestInfo, JiraLib.Models.Locale.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deprecated, use [ Update a user profile](https://developer.atlassian.com/cloud/admin/user-management/rest/#api-users-account-id-manage-profile-patch) from the user management REST API instead.Sets the locale of the user. The locale must be one supported by the instance of Jira.**[Permissions](#permissions) required:** Permission to access Jira.
@@ -84,7 +84,7 @@ namespace JiraLib.Rest.Api.Three.Mypreferences.Locale {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deprecated, use [ Update a user profile](https://developer.atlassian.com/cloud/admin/user-management/rest/#api-users-account-id-manage-profile-patch) from the user management REST API instead.Deletes the locale of the user, which restores the default setting.**[Permissions](#permissions) required:** Permission to access Jira.

@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Project.Item.Securitylevel {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<ProjectIssueSecurityLevels>(requestInfo, ProjectIssueSecurityLevels.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<ProjectIssueSecurityLevels>(requestInfo, ProjectIssueSecurityLevels.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns all [issue security](https://confluence.atlassian.com/x/J4lKLg) levels for the project that the user has access to.This operation can be accessed anonymously.**[Permissions](#permissions) required:** *Browse projects* [global permission](https://confluence.atlassian.com/x/x4dKLg) for the project, however, issue security levels are only returned for authenticated user with *Set Issue Security* [global permission](https://confluence.atlassian.com/x/x4dKLg) for the project.

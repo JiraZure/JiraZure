@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Priorityscheme.Item.Priorities {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageBeanPriorityWithSequence>(requestInfo, PageBeanPriorityWithSequence.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanPriorityWithSequence>(requestInfo, PageBeanPriorityWithSequence.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of priorities by scheme.**[Permissions](#permissions) required:** Permission to access Jira.

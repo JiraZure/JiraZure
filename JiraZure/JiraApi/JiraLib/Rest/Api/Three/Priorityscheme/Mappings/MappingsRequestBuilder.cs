@@ -48,7 +48,7 @@ namespace JiraLib.Rest.Api.Three.Priorityscheme.Mappings {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<PageBeanPriorityWithSequence>(requestInfo, PageBeanPriorityWithSequence.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanPriorityWithSequence>(requestInfo, PageBeanPriorityWithSequence.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of priorities that would require mapping, given a change in priorities or projects associated with a priority scheme.**[Permissions](#permissions) required:** Permission to access Jira.

@@ -59,7 +59,7 @@ namespace JiraLib.Rest.Api.Three.VersionNamespace.Item.Relatedwork {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<VersionRelatedWork>(requestInfo, VersionRelatedWork.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<VersionRelatedWork>(requestInfo, VersionRelatedWork.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace JiraLib.Rest.Api.Three.VersionNamespace.Item.Relatedwork {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<VersionRelatedWork>(requestInfo, VersionRelatedWork.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<VersionRelatedWork>(requestInfo, VersionRelatedWork.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the given related work. You can only update generic link related works via Rest APIs. Any archived version related works can&apos;t be edited.This operation can be accessed anonymously.**[Permissions](#permissions) required:** *Resolve issues:* and *Edit issues* [Managing project permissions](https://confluence.atlassian.com/adminjiraserver/managing-project-permissions-938847145.html) for the project that contains the version.
@@ -100,7 +100,7 @@ namespace JiraLib.Rest.Api.Three.VersionNamespace.Item.Relatedwork {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<VersionRelatedWork>(requestInfo, VersionRelatedWork.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<VersionRelatedWork>(requestInfo, VersionRelatedWork.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns related work items for the given version id.This operation can be accessed anonymously.**[Permissions](#permissions) required:** *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project containing the version.

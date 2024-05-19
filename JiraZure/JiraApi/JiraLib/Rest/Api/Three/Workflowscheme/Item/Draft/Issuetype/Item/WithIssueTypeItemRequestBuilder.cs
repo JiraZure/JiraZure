@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Workflowscheme.Item.Draft.Issuetype.Item {
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<JiraLib.Models.WorkflowScheme>(requestInfo, JiraLib.Models.WorkflowScheme.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.WorkflowScheme>(requestInfo, JiraLib.Models.WorkflowScheme.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the issue type-workflow mapping for an issue type in a workflow scheme&apos;s draft.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
@@ -64,7 +64,7 @@ namespace JiraLib.Rest.Api.Three.Workflowscheme.Item.Draft.Issuetype.Item {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<IssueTypeWorkflowMapping>(requestInfo, IssueTypeWorkflowMapping.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<IssueTypeWorkflowMapping>(requestInfo, IssueTypeWorkflowMapping.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Sets the workflow for an issue type in a workflow scheme&apos;s draft.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
@@ -84,7 +84,7 @@ namespace JiraLib.Rest.Api.Three.Workflowscheme.Item.Draft.Issuetype.Item {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<JiraLib.Models.WorkflowScheme>(requestInfo, JiraLib.Models.WorkflowScheme.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.WorkflowScheme>(requestInfo, JiraLib.Models.WorkflowScheme.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes the issue type-workflow mapping for an issue type in a workflow scheme&apos;s draft.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

@@ -59,7 +59,7 @@ namespace JiraLib.Rest.Api.Three.Applicationrole {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<JiraLib.Models.ApplicationRole>(requestInfo, JiraLib.Models.ApplicationRole.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<JiraLib.Models.ApplicationRole>(requestInfo, JiraLib.Models.ApplicationRole.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>

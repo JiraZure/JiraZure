@@ -90,7 +90,7 @@ namespace JiraLib.Rest.Api.Three.Issuesecurityschemes {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<SecuritySchemes>(requestInfo, SecuritySchemes.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<SecuritySchemes>(requestInfo, SecuritySchemes.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a security scheme with security scheme levels and levels&apos; members. You can create up to 100 security scheme levels and security scheme levels&apos; members per request.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
@@ -119,7 +119,7 @@ namespace JiraLib.Rest.Api.Three.Issuesecurityschemes {
                 {"401", ErrorCollection.CreateFromDiscriminatorValue},
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<SecuritySchemeId>(requestInfo, SecuritySchemeId.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<SecuritySchemeId>(requestInfo, SecuritySchemeId.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns all [issue security schemes](https://confluence.atlassian.com/x/J4lKLg).**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

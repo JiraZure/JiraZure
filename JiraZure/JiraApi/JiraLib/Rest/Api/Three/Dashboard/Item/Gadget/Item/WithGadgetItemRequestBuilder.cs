@@ -50,7 +50,7 @@ namespace JiraLib.Rest.Api.Three.Dashboard.Item.Gadget.Item {
             {
                 {"404", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Changes the title, position, and color of the gadget on a dashboard.**[Permissions](#permissions) required:** None.
@@ -76,7 +76,7 @@ namespace JiraLib.Rest.Api.Three.Dashboard.Item.Gadget.Item {
                 {"400", ErrorCollection.CreateFromDiscriminatorValue},
                 {"404", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Removes a dashboard gadget from a dashboard.When a gadget is removed from a dashboard, other gadgets in the same column are moved up to fill the emptied position.**[Permissions](#permissions) required:** None.

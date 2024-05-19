@@ -48,7 +48,7 @@ namespace JiraLib.Rest.Api.Three.Issue.Archive {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<string>(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Enables admins to archive up to 1000 issues in a single request using issue ID/key, returning details of the issue(s) archived in the process and the errors encountered, if any.**Note that:** *  you can&apos;t archive subtasks directly, only through their parent issues *  you can only archive issues from software, service management, and business projects**[Permissions](#permissions) required:** Jira admin or site admin: [global permission](https://confluence.atlassian.com/x/x4dKLg)**License required:** Premium or Enterprise**Signed-in users only:** This API can&apos;t be accessed anonymously.  
@@ -68,7 +68,7 @@ namespace JiraLib.Rest.Api.Three.Issue.Archive {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<IssueArchivalSyncResponse>(requestInfo, IssueArchivalSyncResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<IssueArchivalSyncResponse>(requestInfo, IssueArchivalSyncResponse.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Enables admins to archive up to 100,000 issues in a single request using JQL, returning the URL to check the status of the submitted request.You can use the [get task](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-tasks/#api-rest-api-3-task-taskid-get) and [cancel task](https://developer.atlassian.com/cloud/jira/platform/rest/v3/api-group-tasks/#api-rest-api-3-task-taskid-cancel-post) APIs to manage the request.**Note that:** *  you can&apos;t archive subtasks directly, only through their parent issues *  you can only archive issues from software, service management, and business projects**[Permissions](#permissions) required:** Jira admin or site admin: [global permission](https://confluence.atlassian.com/x/x4dKLg)**License required:** Premium or Enterprise**Signed-in users only:** This API can&apos;t be accessed anonymously.**Rate limiting:** Only a single request per jira instance can be active at any given time.  

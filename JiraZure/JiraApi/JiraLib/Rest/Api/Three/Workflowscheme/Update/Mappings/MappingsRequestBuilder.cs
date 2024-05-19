@@ -48,7 +48,7 @@ namespace JiraLib.Rest.Api.Three.Workflowscheme.Update.Mappings {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<WorkflowSchemeUpdateRequiredMappingsResponse>(requestInfo, WorkflowSchemeUpdateRequiredMappingsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<WorkflowSchemeUpdateRequiredMappingsResponse>(requestInfo, WorkflowSchemeUpdateRequiredMappingsResponse.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets the required status mappings for the desired changes to a workflow scheme. The results are provided per issue type and workflow. When updating a workflow scheme, status mappings can be provided per issue type, per workflow, or both.**[Permissions](#permissions) required:** *  *Administer Jira* permission to update all, including global-scoped, workflow schemes. *  *Administer projects* project permission to update project-scoped workflow schemes.

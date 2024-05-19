@@ -53,7 +53,7 @@ namespace JiraLib.Rest.Api.Three.Notificationscheme.Project {
                 {"400", ErrorCollection.CreateFromDiscriminatorValue},
                 {"401", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PageBeanNotificationSchemeAndProjectMappingJsonBean>(requestInfo, PageBeanNotificationSchemeAndProjectMappingJsonBean.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanNotificationSchemeAndProjectMappingJsonBean>(requestInfo, PageBeanNotificationSchemeAndProjectMappingJsonBean.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) mapping of project that have notification scheme assigned. You can provide either one or multiple notification scheme IDs or project IDs to filter by. If you don&apos;t provide any, this will return a list of all mappings. Note that only company-managed (classic) projects are supported. This is because team-managed projects don&apos;t have a concept of a default notification scheme. The mappings are ordered by projectId.**[Permissions](#permissions) required:** Permission to access Jira.

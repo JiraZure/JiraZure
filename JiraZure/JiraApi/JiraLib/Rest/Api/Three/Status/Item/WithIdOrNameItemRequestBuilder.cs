@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Status.Item {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<StatusDetails>(requestInfo, StatusDetails.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<StatusDetails>(requestInfo, StatusDetails.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a status. The status must be associated with an active workflow to be returned.If a name is used on more than one status, only the status found first is returned. Therefore, identifying the status by its ID may be preferable.This operation can be accessed anonymously.[Permissions](#permissions) required: None.

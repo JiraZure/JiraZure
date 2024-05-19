@@ -72,7 +72,7 @@ namespace JiraLib.Rest.Api.Three.ApplicationProperties {
                 {"401", ErrorCollection.CreateFromDiscriminatorValue},
                 {"404", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<ApplicationProperty>(requestInfo, ApplicationProperty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<ApplicationProperty>(requestInfo, ApplicationProperty.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>

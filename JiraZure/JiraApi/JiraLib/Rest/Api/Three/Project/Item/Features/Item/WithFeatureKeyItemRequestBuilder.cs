@@ -48,7 +48,7 @@ namespace JiraLib.Rest.Api.Three.Project.Item.Features.Item {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<ContainerForProjectFeatures>(requestInfo, ContainerForProjectFeatures.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<ContainerForProjectFeatures>(requestInfo, ContainerForProjectFeatures.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Sets the state of a project feature.

@@ -47,7 +47,7 @@ namespace JiraLib.Rest.Api.Three.Issuetypescheme.Item.Issuetype.Move {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Changes the order of issue types in an issue type scheme.The request body parameters must meet the following requirements: *  all of the issue types must belong to the issue type scheme. *  either `after` or `position` must be provided. *  the issue type in `after` must not be in the issue type list.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

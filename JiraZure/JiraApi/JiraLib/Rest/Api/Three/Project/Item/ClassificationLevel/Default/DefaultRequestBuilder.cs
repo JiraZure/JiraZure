@@ -45,7 +45,7 @@ namespace JiraLib.Rest.Api.Three.Project.Item.ClassificationLevel.Default {
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the default data classification for a project.**[Permissions](#permissions) required:** *  *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project. *  *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project. *  *Administer jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
@@ -63,7 +63,7 @@ namespace JiraLib.Rest.Api.Three.Project.Item.ClassificationLevel.Default {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, default, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the default data classification level for a project.**[Permissions](#permissions) required:** *  *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project. *  *Administer jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
@@ -82,7 +82,7 @@ namespace JiraLib.Rest.Api.Three.Project.Item.ClassificationLevel.Default {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Remove the default data classification level for a project.**[Permissions](#permissions) required:** *  *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project. *  *Administer jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

@@ -48,7 +48,7 @@ namespace JiraLib.Rest.Api.Three.Permissions.Project {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<PermittedProjects>(requestInfo, PermittedProjects.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PermittedProjects>(requestInfo, PermittedProjects.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns all the projects where the user is granted a list of project permissions.This operation can be accessed anonymously.**[Permissions](#permissions) required:** None.

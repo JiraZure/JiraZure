@@ -54,7 +54,7 @@ namespace JiraLib.Rest.AtlassianConnect.One.Addons.Item.Properties.Item {
                 {"401", OperationMessage.CreateFromDiscriminatorValue},
                 {"404", OperationMessage.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the key and value of an app&apos;s property.**[Permissions](#permissions) required:** Only a Connect app whose key matches `addonKey` can make this request.Additionally, Forge apps can access Connect app properties (stored against the same `app.connect.key`).
@@ -81,7 +81,7 @@ namespace JiraLib.Rest.AtlassianConnect.One.Addons.Item.Properties.Item {
                 {"401", OperationMessage.CreateFromDiscriminatorValue},
                 {"404", OperationMessage.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<EntityProperty>(requestInfo, EntityProperty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<EntityProperty>(requestInfo, EntityProperty.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Sets the value of an app&apos;s property. Use this resource to store custom data for your app.The value of the request body must be a [valid](http://tools.ietf.org/html/rfc4627), non-empty JSON blob. The maximum length is 32768 characters.**[Permissions](#permissions) required:** Only a Connect app whose key matches `addonKey` can make this request.Additionally, Forge apps can access Connect app properties (stored against the same `app.connect.key`).
@@ -108,7 +108,7 @@ namespace JiraLib.Rest.AtlassianConnect.One.Addons.Item.Properties.Item {
                 {"400", OperationMessage.CreateFromDiscriminatorValue},
                 {"401", OperationMessage.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<OperationMessage>(requestInfo, OperationMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<OperationMessage>(requestInfo, OperationMessage.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes an app&apos;s property.**[Permissions](#permissions) required:** Only a Connect app whose key matches `addonKey` can make this request.Additionally, Forge apps can access Connect app properties (stored against the same `app.connect.key`).

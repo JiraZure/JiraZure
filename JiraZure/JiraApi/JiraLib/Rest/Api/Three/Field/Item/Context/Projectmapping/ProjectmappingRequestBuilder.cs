@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Field.Item.Context.Projectmapping {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageBeanCustomFieldContextProjectMapping>(requestInfo, PageBeanCustomFieldContextProjectMapping.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanCustomFieldContextProjectMapping>(requestInfo, PageBeanCustomFieldContextProjectMapping.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of context to project mappings for a custom field. The result can be filtered by `contextId`. Otherwise, all mappings are returned. Invalid IDs are ignored.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

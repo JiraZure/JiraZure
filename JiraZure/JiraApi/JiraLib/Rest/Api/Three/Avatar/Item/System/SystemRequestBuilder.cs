@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Avatar.Item.System {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<SystemAvatars>(requestInfo, SystemAvatars.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<SystemAvatars>(requestInfo, SystemAvatars.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a list of system avatar details by owner type, where the owner types are issue type, project, or user.This operation can be accessed anonymously.**[Permissions](#permissions) required:** None.

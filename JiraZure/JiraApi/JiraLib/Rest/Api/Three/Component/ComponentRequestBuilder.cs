@@ -59,7 +59,7 @@ namespace JiraLib.Rest.Api.Three.Component {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageBean2ComponentJsonBean>(requestInfo, PageBean2ComponentJsonBean.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBean2ComponentJsonBean>(requestInfo, PageBean2ComponentJsonBean.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a component. Use components to provide containers for issues within a project. Use components to provide containers for issues within a project.This operation can be accessed anonymously.**[Permissions](#permissions) required:** *Administer projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project in which the component is created or *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
@@ -79,7 +79,7 @@ namespace JiraLib.Rest.Api.Three.Component {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<ProjectComponent>(requestInfo, ProjectComponent.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<ProjectComponent>(requestInfo, ProjectComponent.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of all components in a project, including global (Compass) components when applicable.This operation can be accessed anonymously.**[Permissions](#permissions) required:** *Browse Projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project.

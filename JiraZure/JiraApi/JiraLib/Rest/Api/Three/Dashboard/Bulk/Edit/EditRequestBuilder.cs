@@ -55,7 +55,7 @@ namespace JiraLib.Rest.Api.Three.Dashboard.Bulk.Edit {
                 {"400", ErrorCollection.CreateFromDiscriminatorValue},
                 {"401", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<BulkEditShareableEntityResponse>(requestInfo, BulkEditShareableEntityResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<BulkEditShareableEntityResponse>(requestInfo, BulkEditShareableEntityResponse.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Bulk edit dashboards. Maximum number of dashboards to be edited at the same time is 100.**[Permissions](#permissions) required:** NoneThe dashboards to be updated must be owned by the user, or the user must be an administrator.

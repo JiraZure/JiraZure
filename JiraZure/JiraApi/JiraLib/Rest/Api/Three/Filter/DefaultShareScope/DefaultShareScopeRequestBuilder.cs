@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Filter.DefaultShareScope {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<JiraLib.Models.DefaultShareScope>(requestInfo, JiraLib.Models.DefaultShareScope.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.DefaultShareScope>(requestInfo, JiraLib.Models.DefaultShareScope.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Sets the default sharing for new filters and dashboards for a user.**[Permissions](#permissions) required:** Permission to access Jira.
@@ -66,7 +66,7 @@ namespace JiraLib.Rest.Api.Three.Filter.DefaultShareScope {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<JiraLib.Models.DefaultShareScope>(requestInfo, JiraLib.Models.DefaultShareScope.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.DefaultShareScope>(requestInfo, JiraLib.Models.DefaultShareScope.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the default sharing settings for new filters and dashboards for a user.**[Permissions](#permissions) required:** Permission to access Jira.

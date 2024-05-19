@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Statuses.Search {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageOfStatuses>(requestInfo, PageOfStatuses.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageOfStatuses>(requestInfo, PageOfStatuses.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/#pagination) list of statuses that match a search on name or project.**[Permissions](#permissions) required:** *  *Administer projects* [project permission.](https://confluence.atlassian.com/x/yodKLg) *  *Administer Jira* [project permission.](https://confluence.atlassian.com/x/yodKLg)

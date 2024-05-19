@@ -46,7 +46,7 @@ namespace JiraLib.Rest.AtlassianConnect.One.ServiceRegistry {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<JiraLib.Models.ServiceRegistry>(requestInfo, JiraLib.Models.ServiceRegistry.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<JiraLib.Models.ServiceRegistry>(requestInfo, JiraLib.Models.ServiceRegistry.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>

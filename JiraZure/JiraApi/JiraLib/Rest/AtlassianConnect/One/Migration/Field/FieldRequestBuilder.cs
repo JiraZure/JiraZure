@@ -48,7 +48,7 @@ namespace JiraLib.Rest.AtlassianConnect.One.Migration.Field {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the value of a custom field added by Connect apps on one or more issues.The values of up to 200 custom fields can be updated.**[Permissions](#permissions) required:** Only Connect apps can make this request

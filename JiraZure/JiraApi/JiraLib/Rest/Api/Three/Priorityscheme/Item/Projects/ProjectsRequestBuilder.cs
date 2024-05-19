@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Priorityscheme.Item.Projects {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageBeanProject>(requestInfo, PageBeanProject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanProject>(requestInfo, PageBeanProject.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of projects by scheme.**[Permissions](#permissions) required:** Permission to access Jira.

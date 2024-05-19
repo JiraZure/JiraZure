@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.User.Bulk.Migration {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<UserMigrationBean>(requestInfo, UserMigrationBean.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<UserMigrationBean>(requestInfo, UserMigrationBean.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>

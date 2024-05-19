@@ -52,7 +52,7 @@ namespace JiraLib.Rest.Api.Three.User.Bulk {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageBeanUser>(requestInfo, PageBeanUser.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanUser>(requestInfo, PageBeanUser.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of the users specified by one or more account IDs.**[Permissions](#permissions) required:** Permission to access Jira.

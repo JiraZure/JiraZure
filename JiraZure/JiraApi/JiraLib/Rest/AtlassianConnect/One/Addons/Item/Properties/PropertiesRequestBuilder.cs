@@ -64,7 +64,7 @@ namespace JiraLib.Rest.AtlassianConnect.One.Addons.Item.Properties {
             {
                 {"401", OperationMessage.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<PropertyKeys>(requestInfo, PropertyKeys.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PropertyKeys>(requestInfo, PropertyKeys.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets all the properties of an app.**[Permissions](#permissions) required:** Only a Connect app whose key matches `addonKey` can make this request.Additionally, Forge apps can access Connect app properties (stored against the same `app.connect.key`).

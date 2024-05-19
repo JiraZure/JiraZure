@@ -78,7 +78,7 @@ namespace JiraLib.Rest.Api.Three.Resolution {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<JiraLib.Models.Resolution>(requestInfo, JiraLib.Models.Resolution.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<JiraLib.Models.Resolution>(requestInfo, JiraLib.Models.Resolution.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -108,7 +108,7 @@ namespace JiraLib.Rest.Api.Three.Resolution {
                 {"401", ErrorCollection.CreateFromDiscriminatorValue},
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ResolutionId>(requestInfo, ResolutionId.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<ResolutionId>(requestInfo, ResolutionId.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a list of all issue resolution values.**[Permissions](#permissions) required:** Permission to access Jira.

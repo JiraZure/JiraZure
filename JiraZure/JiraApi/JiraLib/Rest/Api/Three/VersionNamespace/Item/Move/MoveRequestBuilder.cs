@@ -48,7 +48,7 @@ namespace JiraLib.Rest.Api.Three.VersionNamespace.Item.Move {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<VersionObject>(requestInfo, VersionObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<VersionObject>(requestInfo, VersionObject.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Modifies the version&apos;s sequence within the project, which affects the display order of the versions in Jira.This operation can be accessed anonymously.**[Permissions](#permissions) required:** *Browse projects* project permission for the project that contains the version.

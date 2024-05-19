@@ -57,7 +57,7 @@ namespace JiraLib.Rest.Api.Three.Universal_avatar.View.TypeNamespace.Item.Owner.
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
                 {"404", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<StreamingResponseBody>(requestInfo, StreamingResponseBody.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<StreamingResponseBody>(requestInfo, StreamingResponseBody.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the avatar image for a project or issue type.This operation can be accessed anonymously.**[Permissions](#permissions) required:** *  For system avatars, none. *  For custom project avatars, *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project the avatar belongs to. *  For custom issue type avatars, *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for at least one project the issue type is used in.

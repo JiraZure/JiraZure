@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Project.Item.Roledetails {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<ProjectRoleDetails>(requestInfo, ProjectRoleDetails.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<ProjectRoleDetails>(requestInfo, ProjectRoleDetails.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>

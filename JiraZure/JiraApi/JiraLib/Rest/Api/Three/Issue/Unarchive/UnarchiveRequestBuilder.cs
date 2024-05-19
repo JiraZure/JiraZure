@@ -48,7 +48,7 @@ namespace JiraLib.Rest.Api.Three.Issue.Unarchive {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<IssueArchivalSyncResponse>(requestInfo, IssueArchivalSyncResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<IssueArchivalSyncResponse>(requestInfo, IssueArchivalSyncResponse.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Enables admins to unarchive up to 1000 issues in a single request using issue ID/key, returning details of the issue(s) unarchived in the process and the errors encountered, if any.**Note that:** *  you can&apos;t unarchive subtasks directly, only through their parent issues *  you can only unarchive issues from software, service management, and business projects**[Permissions](#permissions) required:** Jira admin or site admin: [global permission](https://confluence.atlassian.com/x/x4dKLg)**License required:** Premium or Enterprise**Signed-in users only:** This API can&apos;t be accessed anonymously.  

@@ -45,7 +45,7 @@ namespace JiraLib.Rest.Api.Three.Filter.Item.Columns {
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the columns configured for a filter. The column configuration is used when the filter&apos;s results are viewed in *List View* with the *Columns* set to *Filter*.This operation can be accessed anonymously.**[Permissions](#permissions) required:** None, however, column details are only returned for: *  filters owned by the user. *  filters shared with a group that the user is a member of. *  filters shared with a private project that the user has *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for. *  filters shared with a public project. *  filters shared with the public.
@@ -63,7 +63,7 @@ namespace JiraLib.Rest.Api.Three.Filter.Item.Columns {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<ColumnItem>(requestInfo, ColumnItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<ColumnItem>(requestInfo, ColumnItem.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
@@ -84,7 +84,7 @@ namespace JiraLib.Rest.Api.Three.Filter.Item.Columns {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Reset the user&apos;s column configuration for the filter to the default.**[Permissions](#permissions) required:** Permission to access Jira, however, columns are only reset for: *  filters owned by the user. *  filters shared with a group that the user is a member of. *  filters shared with a private project that the user has *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for. *  filters shared with a public project. *  filters shared with the public.

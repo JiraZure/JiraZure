@@ -44,7 +44,7 @@ namespace JiraLib.Rest.Api.Three.Screens.Item.Tabs.Item.Move.Item {
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Moves a screen tab.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

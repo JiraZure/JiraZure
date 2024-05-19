@@ -55,7 +55,7 @@ namespace JiraLib.Rest.Api.Three.Workflow.Rule.Config.Delete {
                 {"400", ErrorCollection.CreateFromDiscriminatorValue},
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WorkflowTransitionRulesUpdateErrors>(requestInfo, WorkflowTransitionRulesUpdateErrors.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<WorkflowTransitionRulesUpdateErrors>(requestInfo, WorkflowTransitionRulesUpdateErrors.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes workflow transition rules from one or more workflows. These rule types are supported: *  [post functions](https://developer.atlassian.com/cloud/jira/platform/modules/workflow-post-function/) *  [conditions](https://developer.atlassian.com/cloud/jira/platform/modules/workflow-condition/) *  [validators](https://developer.atlassian.com/cloud/jira/platform/modules/workflow-validator/)Only rules created by the calling Connect app can be deleted.**[Permissions](#permissions) required:** Only Connect apps can use this operation.

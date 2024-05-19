@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Instance.License {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<JiraLib.Models.License>(requestInfo, JiraLib.Models.License.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.License>(requestInfo, JiraLib.Models.License.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns licensing information about the Jira instance.**[Permissions](#permissions) required:** None.

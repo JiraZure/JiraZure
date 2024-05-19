@@ -48,7 +48,7 @@ namespace JiraLib.Rest.Api.Three.Issues.Archive.Export {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<ExportArchivedIssuesTaskProgressResponse>(requestInfo, ExportArchivedIssuesTaskProgressResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<ExportArchivedIssuesTaskProgressResponse>(requestInfo, ExportArchivedIssuesTaskProgressResponse.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Enables admins to retrieve details of all archived issues. Upon a successful request, the admin who submitted it will receive an email with a link to download a CSV file with the issue details.Note that this API only exports the values of system fields and archival-specific fields (`ArchivedBy` and `ArchivedDate`). Custom fields aren&apos;t supported.**[Permissions](#permissions) required:** Jira admin or site admin: [global permission](https://confluence.atlassian.com/x/x4dKLg)**License required:** Premium or Enterprise**Signed-in users only:** This API can&apos;t be accessed anonymously.**Rate limiting:** Only a single request can be active at any given time.  

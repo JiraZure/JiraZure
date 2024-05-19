@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Project.TypeNamespace.Item.Accessible {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<ProjectType>(requestInfo, ProjectType.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<ProjectType>(requestInfo, ProjectType.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [project type](https://confluence.atlassian.com/x/Var1Nw) if it is accessible to the user.**[Permissions](#permissions) required:** Permission to access Jira.

@@ -52,7 +52,7 @@ namespace JiraLib.Rest.Api.Three.Universal_avatar.TypeNamespace.Item.Owner.Item 
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<JiraLib.Models.Avatars>(requestInfo, JiraLib.Models.Avatars.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.Avatars>(requestInfo, JiraLib.Models.Avatars.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Loads a custom avatar for a project or issue type.Specify the avatar&apos;s local file location in the body of the request. Also, include the following headers: *  `X-Atlassian-Token: no-check` To prevent XSRF protection blocking the request, for more information see [Special Headers](#special-request-headers). *  `Content-Type: image/image type` Valid image types are JPEG, GIF, or PNG.For example:  `curl --request POST ``--user email@example.com:&lt;api_token&gt; ``--header &apos;X-Atlassian-Token: no-check&apos; ``--header &apos;Content-Type: image/&lt; image_type&gt;&apos; ``--data-binary &quot;&lt;@/path/to/file/with/your/avatar&gt;&quot; ``--url &apos;https://your-domain.atlassian.net/rest/api/3/universal_avatar/type/{type}/owner/{entityId}&apos;`The avatar is cropped to a square. If no crop parameters are specified, the square originates at the top left of the image. The length of the square&apos;s sides is set to the smaller of the height or width of the image.The cropped image is then used to create avatars of 16x16, 24x24, 32x32, and 48x48 in size.After creating the avatar use: *  [Update issue type](#api-rest-api-3-issuetype-id-put) to set it as the issue type&apos;s displayed avatar. *  [Set project avatar](#api-rest-api-3-project-projectIdOrKey-avatar-put) to set it as the project&apos;s displayed avatar.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).
@@ -74,7 +74,7 @@ namespace JiraLib.Rest.Api.Three.Universal_avatar.TypeNamespace.Item.Owner.Item 
             _ = body ?? throw new ArgumentNullException(nameof(body));
             if(string.IsNullOrEmpty(contentType)) throw new ArgumentNullException(nameof(contentType));
             var requestInfo = ToPostRequestInformation(body, contentType, requestConfiguration);
-            return await RequestAdapter.SendAsync<JiraLib.Models.Avatar>(requestInfo, JiraLib.Models.Avatar.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.Avatar>(requestInfo, JiraLib.Models.Avatar.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the system and custom avatars for a project or issue type.This operation can be accessed anonymously.**[Permissions](#permissions) required:** *  for custom project avatars, *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for the project the avatar belongs to. *  for custom issue type avatars, *Browse projects* [project permission](https://confluence.atlassian.com/x/yodKLg) for at least one project the issue type is used in. *  for system avatars, none.

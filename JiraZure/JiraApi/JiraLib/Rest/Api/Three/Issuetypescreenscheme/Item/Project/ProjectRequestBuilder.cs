@@ -46,7 +46,7 @@ namespace JiraLib.Rest.Api.Three.Issuetypescreenscheme.Item.Project {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<PageBeanProjectDetails>(requestInfo, PageBeanProjectDetails.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<PageBeanProjectDetails>(requestInfo, PageBeanProjectDetails.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a [paginated](#pagination) list of projects associated with an issue type screen scheme.Only company-managed projects associated with an issue type screen scheme are returned.**[Permissions](#permissions) required:** *Administer Jira* [global permission](https://confluence.atlassian.com/x/x4dKLg).

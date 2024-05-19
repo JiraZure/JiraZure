@@ -55,7 +55,7 @@ namespace JiraLib.Rest.Api.Three.Webhook.Refresh {
                 {"400", ErrorCollection.CreateFromDiscriminatorValue},
                 {"403", ErrorCollection.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WebhooksExpirationDate>(requestInfo, WebhooksExpirationDate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<WebhooksExpirationDate>(requestInfo, WebhooksExpirationDate.CreateFromDiscriminatorValue, errorMapping,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Extends the life of webhook. Webhooks registered through the REST API expire after 30 days. Call this operation to keep them alive.Unrecognized webhook IDs (those that are not found or belong to other apps) are ignored.**[Permissions](#permissions) required:** Only [Connect](https://developer.atlassian.com/cloud/jira/platform/#connect-apps) and [OAuth 2.0](https://developer.atlassian.com/cloud/jira/platform/oauth-2-3lo-apps) apps can use this operation.

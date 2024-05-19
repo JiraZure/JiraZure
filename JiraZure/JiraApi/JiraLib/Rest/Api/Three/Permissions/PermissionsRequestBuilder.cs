@@ -58,7 +58,7 @@ namespace JiraLib.Rest.Api.Three.Permissions {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<JiraLib.Models.Permissions>(requestInfo, JiraLib.Models.Permissions.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<JiraLib.Models.Permissions>(requestInfo, JiraLib.Models.Permissions.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns all permissions, including: *  global permissions. *  project permissions. *  global permissions added by plugins.This operation can be accessed anonymously.**[Permissions](#permissions) required:** None.

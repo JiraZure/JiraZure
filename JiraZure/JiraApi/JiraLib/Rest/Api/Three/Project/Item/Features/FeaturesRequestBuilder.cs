@@ -59,7 +59,7 @@ namespace JiraLib.Rest.Api.Three.Project.Item.Features {
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<ContainerForProjectFeatures>(requestInfo, ContainerForProjectFeatures.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<ContainerForProjectFeatures>(requestInfo, ContainerForProjectFeatures.CreateFromDiscriminatorValue, default,cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the list of features for a project.
