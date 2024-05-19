@@ -1,0 +1,6 @@
+@JiraZure_HostAddress = http://localhost:5002
+
+GET {{JiraZure_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
