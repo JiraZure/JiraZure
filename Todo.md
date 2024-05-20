@@ -1,8 +1,5 @@
 ## 1. Milestone
    
-- [ ] ConfigLoader
-    - [ ] Standalone::LoadIssuerHandling
-    - [ ] Standalone::LoadProjectHandling
 
 - [ ] AzureHook
     - [ ] Create Issue 	
@@ -34,21 +31,29 @@
     - [ ] Basic logging
 - [ ] Docker Composer File
 
-## 3. Milestone
+## 3. 
+- [ ] ConfigLoader
+    - [ ] Standalone::LoadIssuerHandling
+    - [ ] Standalone::LoadProjectHandling
+- [ ] Database 
+  - [ ] Models
+  - [ ] Converter -> Azure
+  - [ ] Converter -> Jira   
+
+## 4. Milestone
+
 
 - [ ] All Basics Azure -> Jira
 - [ ] All Basics Jira -> Azure
 
-## 4. Milestone
+## 5. Milestone
 
-- [ ] ConfigLoader
-    - [ ] API::LoadIssuerHandling
-    - [ ] API::LoadProjectHandling
+
 - [ ] UI Angular
     - [ ] JSON Viewer
     - [ ] JSON Mapper Basic
 
-## 5. Milestone
+## 6. Milestone
 
 - [ ]  UI
     - [ ] RuleCreater
@@ -56,14 +61,16 @@
     - [ ] RuleMapper
 - [ ] Some TODO you didnt wont to
 
-## 6. MileStone
+## 7. MileStone
 	
 - [ ] UI
     - [ ] Projects Handling
 - [ ] C# 
     - [ ] Custom Rules...		
 
-## 7. MileStone
-
+## 8. MileStone
+- [ ] ConfigLoader
+    - [ ] API::LoadIssuerHandling
+    - [ ] API::LoadProjectHandling
 - [ ] HELM & Kubernetes
 - [ ] Master Slave Handling

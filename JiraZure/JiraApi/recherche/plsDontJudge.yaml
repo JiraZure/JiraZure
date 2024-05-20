@@ -1,0 +1,4 @@
+Get[READ] -> get Data From Backend
+Post[CREATE] -> send Data to Backend
+PUT/PATCH[UPDATE] -> update Data in Backend
+DELETE[DELETE] -> delete Data in Backend
