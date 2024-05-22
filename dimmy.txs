@@ -5,3 +5,27 @@
    dotnet add package Microsoft.Kiota.Serialization.Json --version 1.2.3
    dotnet add package Microsoft.Kiota.Serialization.Multipart --version 1.1.4
    dotnet add package Microsoft.Kiota.Serialization.Text --version 1.1.5
+
+   Learn dotnet
+          dotnet core api
+          Logging 
+          Metrics
+          Tracing
+          OOP
+          C# standarts
+          Threading±
+          DI±
+          Standalone Multiple Container
+          Helm
+          Kubernetes
+          Unit testing 
+          Api testing
+          e2e testing
+          
+          Make A Real Product
+          Angular
+          
+          Maybe First Open source 
+          Maybe Release
+          Maybe sharing officle
+
