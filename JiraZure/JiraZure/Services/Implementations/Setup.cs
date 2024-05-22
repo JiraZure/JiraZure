@@ -1,4 +1,7 @@
 ﻿using JiraZure.Services.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using OpenTelemetry;
 using OpenTelemetry.Logs;
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Resources;
@@ -6,17 +9,10 @@ using OpenTelemetry.Trace;
 
 namespace JiraZure.Services.Implementations
 {
-    public class test
-    {
-        public test(string test1 = "", string test2 = "")
-        {
-            //test
-        }
-    }
-
     public class Setup
     {
         private readonly ServerConfiguration _serverConfig;
+
         public Setup(IServerConfiguration serverConfigurator)
         {
             _serverConfig = serverConfigurator.GetServerConfiguration();
@@ -39,25 +35,25 @@ namespace JiraZure.Services.Implementations
 
 
             builder.Logging.AddOpenTelemetry(options =>
-                {
+            {
 
                     // make identifyable the service name
-                    options.SetResourceBuilder(
-                       ResourceBuilder.CreateDefault()
-                       .AddService(_serverConfig.ContainerName));
+                options.SetResourceBuilder(
+                   ResourceBuilder.CreateDefault()
+                   .AddService(_serverConfig.ContainerName));
                     // This option allows the logging of the logical operation scope. 
                     // A scope is a region of code with a defined beginning and end. It can be useful in tracing the flow of the application.
-                    options.IncludeScopes = true;
+                options.IncludeScopes = true;
 
                     // Formats the Logs
-                    options.IncludeFormattedMessage = true;
+                options.IncludeFormattedMessage = true;
 
                     // Parse state values: This option allows the parsing of the state values in the logs. 
                     // State values are additional information that can be included in the log. Parsing them can make the log more readable.
-                    options.ParseStateValues = true;
+                options.ParseStateValues = true;
 
                     // Add console exporter
-                    options.AddConsoleExporter();
+                options.AddConsoleExporter();
 
                 }
 
@@ -70,7 +66,6 @@ namespace JiraZure.Services.Implementations
 
                   // AddAspNetCoreInstrumentation: This method adds ASP.NET Core instrumentation to the tracing. Instrumentation is the act of adding observability to your code. In this case, it's adding observability to the ASP.NET Core application.
                   tracing.AddAspNetCoreInstrumentation();
-
                   tracing.AddConsoleExporter();
               })
               // Metrics  are numerical values that can be used to understand the behavior of a system.
@@ -78,14 +73,21 @@ namespace JiraZure.Services.Implementations
               {
                   metrics.AddAspNetCoreInstrumentation();
                   metrics.AddConsoleExporter();
-              }
-              );
+              });
+
+            // Additional configuration for HealthCheck metrics
+            builder.Services.AddOpenTelemetry()
+              .ConfigureResource(resource => resource.AddService("HealthCheck"))
+              .WithMetrics(metrics =>
+              {
+                  metrics.AddMeter("HealthCheckMeter");
+                  metrics.AddConsoleExporter();
+              });
         }
 
-        internal void checkServerConnection()
+        internal void CheckServerConnection()
         {
-
+            // Implement server connection check logic here
         }
     }
-
 }
